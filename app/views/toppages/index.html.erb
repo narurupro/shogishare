@@ -1,0 +1,24 @@
+<div class="container-fluid">
+  <div class="row">
+    
+    <% if logged_in?  %>
+    
+    
+    
+    <%  else %>
+    
+    <div class="center jumbotron">
+      <div class="text-center">
+        <h1>Shogishareへようこそ</h1>
+        <p>様々な棋譜を参考にできます</p>
+      </div>
+    </div>
+    <div class="text-center">
+       <%=  link_to "新規登録", signup_path ,class: "btn btn-success btn-lg" %>
+       <%= link_to 'ログイン', login_path, class: "btn btn-warning btn-lg" %>
+    </div>
+    
+    <%  end %>
+    
+  </div>
+</div>

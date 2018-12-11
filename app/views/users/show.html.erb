@@ -1,0 +1,29 @@
+<div class="row">
+ <div class="user-profile">
+   <aside class="col-xs-offset-1 col-xs-4">
+      <img class="media-object img-rounded img-responsive" src="
+<%= gravatar_url(@user, { size: 500 }) %>
+" alt="">
+   </aside>
+   <div class="col-xs-offset-1 col-xs-4">
+     <ul class="list-group">
+       <li class="list-group-item list-group-item-success">
+         ユーザーネーム</li>
+       <li class="list-group-item">
+         <%=  @user.name %>
+       </li>
+       <li class="list-group-item list-group-item-success">
+         自己紹介</li>
+         <li class="list-group-item">
+         <%=  @user.description %>
+         </li>
+          <li class="list-group-item list-group-item-success">
+          将棋AppID</li>
+         <li class="list-group-item">
+         <%=  @user.shogi_appid %>
+         </li>
+     </ul>
+     <%=  link_to "ユーザー編集", edit_user_path(@user), class: "btn btn-success pull-right" %>
+   </div>
+ </div>
+</div>
