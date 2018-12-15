@@ -1,0 +1,25 @@
+<div class="text-center">
+  <h1>囲い一覧</h1>
+</div>
+<ul class="list-group">
+  
+  <%  @tags.each do |tag| %>
+  <li class="list-group-item dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+      
+      <span calss="caret"><%= tag.name %></span>
+    </button>
+    <ul class="dropdown-menu" role="menu">
+      
+      <% tag.relational_castlings.each do |relational_castling|   %>
+      <li role="presentation">
+        <div class="text-center"><%= link_to relational_castling.name, relational_castling  %></div>
+      </li>
+      <%  end %>
+      
+    </ul>
+  </li>
+  
+  <%  end %>
+ 
+</ul>

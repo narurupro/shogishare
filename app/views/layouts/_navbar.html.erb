@@ -16,7 +16,7 @@
           <% if logged_in?  %>
           
            <li><%=  link_to "戦法一覧", openings_path %></li>
-          <li>囲い一覧</li>
+          <li><%= link_to "囲い一覧", castlings_path  %></li>
           <li><%= link_to "ユーザー詳細", user_path(current_user)  %></li>
           <li role="separator" class="divider"></li>
           <li><%= link_to "ログアウト", logout_path, method: :delete  %></li>
