@@ -3,10 +3,10 @@ class Tag < ApplicationRecord
   
   has_many :openings
   has_many :tag_maps
-  has_many :relational_openings, through: :tag_maps, source: :tag
+  has_many :relational_openings, through: :tag_maps, source: :opening
   has_many :castlings
   has_many :tag_map2s
-  has_many :relational_castlings, through: :tag_map2s, source: :tag
+  has_many :relational_castlings, through: :tag_map2s, source: :castling
   
   def tag_opening(other_opening)
     self.tag_maps.new(opening_id: other_opening.id)

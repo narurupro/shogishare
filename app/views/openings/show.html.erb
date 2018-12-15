@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="panel panel-info">
+	<div class="panel-heading">
+		<h1 class="text-center">
+		  <%= @opening.name %>
+		</h1>
+	</div>
+	<div class="panel-body">
+		<aside class=" col-xs-6">
+		  <%= @opening.image_url  %>
+		</aside>
+		<div class="col-xs-6">
+		  <ul class="list-group">
+		    <li class="list-group-item list-group-item-info">戦法説明</li>
+		    <li class="list-group-item">
+		    	<%=  @opening.description %>
+		    </li>
+		     <li class="list-group-item list-group-item-info">よく使う囲い</li>
+		    <li class="list-group-item">
+		      <%  @opening.relational_castlings.each do |relational_castling| %>
+		      <%=  relational_castling.name %>
+		      <%  end %>
+		    </li>
+		  </ul>
+		</div>  
+	</div>
+</div>
+</div>
