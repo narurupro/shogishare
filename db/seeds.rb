@@ -1,5 +1,3 @@
-Tag.create(name: "tag1")
-Tag.create(name: "tag2")
-Tag.create(name: "tag3")
-Tag.create(name: "tag4")
-Tag.create(name: "tag5")
+(1..100).each do |number|
+  GameRecord.create(played_at: "20180101", title: "test title" + number.to_s, image_url: "test_image_url", url: "url")
+end
