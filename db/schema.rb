@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181215061735) do
+ActiveRecord::Schema.define(version: 20181215065845) do
 
   create_table "castling_game_records", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "castling_id"
@@ -26,6 +26,14 @@ ActiveRecord::Schema.define(version: 20181215061735) do
     t.string   "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "game_record_comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "content"
+    t.integer  "game_record_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["game_record_id"], name: "index_game_record_comments_on_game_record_id", using: :btree
   end
 
   create_table "game_records", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -109,6 +117,7 @@ ActiveRecord::Schema.define(version: 20181215061735) do
 
   add_foreign_key "castling_game_records", "castlings"
   add_foreign_key "castling_game_records", "game_records"
+  add_foreign_key "game_record_comments", "game_records"
   add_foreign_key "opening_castlings", "castlings"
   add_foreign_key "opening_castlings", "openings"
   add_foreign_key "opening_game_records", "game_records"

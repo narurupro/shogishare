@@ -13,6 +13,7 @@ class GameRecord < ApplicationRecord
   has_many :users
   has_many :user_game_records
   has_many :users_have_favorite, through: :user_game_records, source: :user
+  has_many :game_record_comments
   
   def associate_opening_about_game_record(other_opening)
     self.opening_game_records.new(opening_id: other_opening.id)
