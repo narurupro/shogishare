@@ -9,7 +9,7 @@ class Castling < ApplicationRecord
   has_many :relational_openings, through: :opening_castlings, source: :opening
   has_many :game_records
   has_many :castling_game_records
-  has_many :relational_game_records, through: :castling_game_records, source: :game_records
+  has_many :relational_game_records, through: :castling_game_records, source: :game_record
   
   def associate_opening(other_opening)
     self.opening_castlings.new(opening_id: other_opening.id)

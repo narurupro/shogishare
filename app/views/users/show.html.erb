@@ -26,4 +26,11 @@
      <%=  link_to "ユーザー編集", edit_user_path(@user), class: "btn btn-success pull-right" %>
    </div>
  </div>
+ <div class="clearfix"></div>
+ <div>
+ <h3>お気に入り棋譜一覧</h3>
+
+<%= render "game_records/game_records", game_records: @game_records  %>
+  
+</div>
 </div>

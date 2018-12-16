@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   resources :openings, only: [:index, :show]
   resources :castlings, only: [:index, :show]
   resources :users, only: [:show, :new, :create, :edit, :update]
+  resources :game_records, only: [:show]
 
 end

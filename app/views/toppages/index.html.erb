@@ -3,6 +3,16 @@
     
     <% if logged_in?  %>
     
+    <div>
+<h3>最近登録した棋譜一覧</h3>
+
+<%= render "game_records/game_records", game_records: @game_records %>
+
+<%= paginate @game_records %>
+
+  
+</div>
+    
     
     
     <%  else %>

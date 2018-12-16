@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181215172626) do
+ActiveRecord::Schema.define(version: 20181216030737) do
 
   create_table "castling_game_records", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "castling_id"
@@ -82,6 +82,15 @@ ActiveRecord::Schema.define(version: 20181215172626) do
     t.index ["tag_id"], name: "index_tag_map2s_on_tag_id", using: :btree
   end
 
+  create_table "tag_map3s", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "tag_id"
+    t.integer  "game_record_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["game_record_id"], name: "index_tag_map3s_on_game_record_id", using: :btree
+    t.index ["tag_id"], name: "index_tag_map3s_on_tag_id", using: :btree
+  end
+
   create_table "tag_maps", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "opening_id"
     t.integer  "tag_id"
@@ -126,6 +135,8 @@ ActiveRecord::Schema.define(version: 20181215172626) do
   add_foreign_key "opening_game_records", "openings"
   add_foreign_key "tag_map2s", "castlings"
   add_foreign_key "tag_map2s", "tags"
+  add_foreign_key "tag_map3s", "game_records"
+  add_foreign_key "tag_map3s", "tags"
   add_foreign_key "tag_maps", "openings"
   add_foreign_key "tag_maps", "tags"
   add_foreign_key "user_game_records", "game_records"

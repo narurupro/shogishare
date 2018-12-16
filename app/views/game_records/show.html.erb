@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="panel panel-danger">
+	<div class="panel-heading">
+	  <h1 class="text-center">
+		<%= @game_record.title  %>
+		</h1>
+	</div>
+	<div class="panel-body">
+		<aside class="col-xs-6">
+		  <%= @game_record.image_url  %>
+		</aside>
+		<div class="col-xs-6">
+		<table class="table">
+		  <tbody>
+		    <tr>
+		      <th>対局日</th>
+		      <td><%= @game_record.played_at %></td>
+		    </tr>
+		    <tr>
+		      <th>戦型</th>
+		      <% @game_record.shogi_types.each do |shogi_type| %>
+		      <td> <%=  shogi_type.name %></td>
+		      <%  end %>
+		    </tr>
+		    <tr>
+		      <th>戦法</th>
+		      <% @game_record.relational_openings_about_game_records.each do |relational_openings_about_game_record| %>
+		      <td><%= relational_openings_about_game_record.name  %></td>
+		      <%  end %>
+		    </tr>
+		    <tr>
+		      <th>囲い</th>
+		       <% @game_record.relational_castilngs_about_game_records.each do |relational_castilngs_about_game_record| %>
+		      <td><%= relational_castilngs_about_game_record.name  %></td>
+		      <% end  %>
+		    </tr>
+		    <tr>
+		      <th>棋譜参考url</th>
+		      <td><%= @game_record.url  %></td>
+		    </tr>
+		  </tbody>
+		  
+		</table>
+		</div>
+	</div>
+</div>

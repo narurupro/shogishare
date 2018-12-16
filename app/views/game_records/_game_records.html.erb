@@ -1,0 +1,14 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>タイトル</th>
+      <th>対局日</th>
+    </tr>
+  </thead>
+  <%  game_records.each do |game_record| %>
+  <tr>
+    <th><%= link_to game_record.title, game_record  %></th>
+    <th><%= game_record.played_at  %></th>
+  </tr>
+  <%  end %>
+</table>

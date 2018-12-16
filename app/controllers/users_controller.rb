@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   
   def show
     @user=User.find(params[:id])
+    @game_records=@user.favorite_game_records
   end
 
   def new
