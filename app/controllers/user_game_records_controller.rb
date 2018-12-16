@@ -1,4 +1,5 @@
 class UserGameRecordsController < ApplicationController
+   before_action :require_user_logged_in
   def create
     game_record=GameRecord.find(params[:game_record_id])
     current_user.like(game_record)

@@ -8,7 +8,11 @@
 	</div>
 	<div class="panel-body">
 		<aside class=" col-xs-6">
+			<%  if @opening.image_url %>
 		  <%= @opening.image_url  %>
+		  <%  else %>
+		  <img src="/images/no-image.png" class="img-responsive">
+		  <%  end %>
 		</aside>
 		<div class="col-xs-6">
 		  <ul class="list-group">

@@ -1,7 +1,7 @@
 class Opening < ApplicationRecord
   
   validates :name, presence: true, length: { maximum:20 }
-  validates :image_url, presence: true, length: { maximum:50 }
+  validates :image_url, length: { maximum:50 }
   validates :description, length: { maximum:250 }
   
   has_many :tags

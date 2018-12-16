@@ -1,6 +1,6 @@
 class Castling < ApplicationRecord
    validates :name, presence: true, length: { maximum:20 }
-  validates :image_url, presence: true, length: { maximum:50 }
+  validates :image_url, length: { maximum:50 }
   
   has_many :tags
   has_many :tag_map2s

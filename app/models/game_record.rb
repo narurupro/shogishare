@@ -1,7 +1,7 @@
 class GameRecord < ApplicationRecord
   validates :played_at, presence: true
   validates :title, presence: true, length: { maximum:20 }
-  validates :image_url, presence: true, length: { maximum:50 }
+  validates :image_url, length: { maximum:50 }
   validates :url , presence: true, length: { maximum:50 }
   
   has_many :openings

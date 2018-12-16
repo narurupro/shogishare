@@ -1,7 +1,6 @@
 <%  if logged_in? %>
 
-  <div class="row">
-    <aside class="col-md-4">
+  
       
       <%= form_for(@game_record_comment) do |f| %>
       
@@ -18,10 +17,7 @@
         <%= f.submit "この棋譜へコメントする",class: "btn btn-primary btn-block"  %>
         
         <%  end %>
-      
-    </aside>
-    
-  </div>
+   
 
 
 <%  end %>
