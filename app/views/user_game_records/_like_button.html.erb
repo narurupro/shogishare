@@ -1,0 +1,31 @@
+<% if current_user.like?(game_record) %>
+
+    
+<%= form_for(current_user.user_game_records.find_by(game_record_id: game_record.id), html: { method: :delete }) do |f| %>
+
+      
+<%= hidden_field_tag :game_record_id, game_record.id %>
+
+      
+<%= f.submit 'unlike', class: 'btn btn-danger btn-block' %>
+
+    
+<% end %>
+
+  
+<% else %>
+
+    
+<%= form_for(current_user.user_game_records.build) do |f| %>
+
+      
+<%= hidden_field_tag :game_record_id, game_record.id %>
+
+      
+<%= f.submit 'like', class: 'btn btn-primary btn-block' %>
+
+    
+<% end %>
+
+  
+<% end %>

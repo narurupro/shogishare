@@ -11,5 +11,9 @@ Rails.application.routes.draw do
   resources :castlings, only: [:index, :show]
   resources :users, only: [:show, :new, :create, :edit, :update]
   resources :game_records, only: [:show]
+  resources :game_record_comments, only: [:index,:create]
+  
+  resources :user_game_records, only: [:create, :destroy]
+  
 
 end
